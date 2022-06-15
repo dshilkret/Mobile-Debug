@@ -1,6 +1,145 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      /*Mobile Debug Table*/
+      .tableButtons {
+        border: solid 0px;
+        padding: 3px;
+      }
+      .tableDebug {
+        border-collapse: collapse;
+        table-layout: fixed;
+        word-wrap: break-word;
+        width: 350px;
+      }
+      .tableTDDebug {
+        border: solid 1px;
+        width: 100px;
+        word-wrap: break-word;
+        vertical-align: top;
+      }
+      .tableTRDebug {
+        border: solid 1px;
+        width: 100px;
+        word-wrap: break-word;
+      }
+      /* Mobile Debug Table End */
+
+      /*Mobile Debug Buttons*/
+      .icon {
+        appearance: auto;
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        font-family: ;
+        text-rendering: auto;
+        color: buttontext;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: center;
+        align-items: flex-start;
+        cursor: default;
+        box-sizing: border-box;
+        background-color: buttonface;
+        margin: 0em;
+        padding: 1px 6px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonborder;
+        border-image: initial;
+      }
+      .iconReset {
+        color: white;
+        background-color: #ff0000;
+
+        appearance: auto;
+        writing-mode: horizontal-tb !important;
+        font-style: ;
+        font-variant-ligatures: ;
+        font-variant-caps: ;
+        font-variant-numeric: ;
+        font-variant-east-asian: ;
+        font-weight: ;
+        font-stretch: ;
+        font-size: ;
+        font-family: ;
+        text-rendering: auto;
+        color: buttontext;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: center;
+        align-items: flex-start;
+        cursor: default;
+        box-sizing: border-box;
+        background-color: buttonface;
+        margin: 0em;
+        padding: 1px 6px;
+        border-width: 2px;
+        border-style: outset;
+        border-color: buttonborder;
+        border-image: initial;
+      }
+      .icon2 {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: linear-gradient(120deg, transparent, #676f74 40%),
+          -webkit-radial-gradient(50% 50%, ellipse farthest-side, #000, #000 80%, #fff
+                86%, #fff 94%, #000 97%, #000 99%, transparent 100%);
+        border: none;
+        color: #fff;
+        position: relative;
+        box-shadow: 0px 0px 1px black;
+        cursor: pointer;
+        outline: none;
+      }
+      .icon2:before {
+        content: "";
+        position: absolute;
+        top: 80%;
+        left: 0px;
+        right: 0px;
+        bottom: -10%;
+        background: -webkit-radial-gradient(
+          50% 50%,
+          ellipse farthest-side,
+          black,
+          transparent
+        );
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .icon2 i {
+        font-size: 1em;
+        text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.5);
+      }
+      .icon2:hover {
+        background: linear-gradient(120deg, transparent, #828a90 30%),
+          -webkit-radial-gradient(50% 50%, ellipse farthest-side, #000, #000 80%, #fff
+                86%, #fff 94%, #000 97%, #000 99%, transparent 100%);
+      }
+      .icon2:hover i {
+        text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.8);
+      }
+      /* Mobile Debug Buttons End */
+    </style>
     <title>DT Demo MSAL</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
     <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.js"></script>
@@ -20,7 +159,7 @@
     <!--Mobile Debug Logging-->
     <div>
       <table>
-        <tr border="1">
+        <tr>
           <td class="tableButtons">
             <button class="icon" onClick="mobileDebug()">Local</button>
           </td>
