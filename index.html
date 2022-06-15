@@ -161,6 +161,9 @@
       <table>
         <tr>
           <td class="tableButtons">
+            <button class="icon" onClick="storeToken()">Store Token</button>
+          </td>
+          <td class="tableButtons">
             <button class="icon" onClick="mobileDebug()">Local</button>
           </td>
           <td class="tableButtons">
@@ -186,6 +189,37 @@
     </div>
 
     <script>
+      //BEGIN SN REST API Explorer
+
+      function storeToken() {
+        var token = localStorage.getItem('msal.idtoken');
+        var requestBody = '{"u_token":"' + token + '"}';
+
+        var client = new XMLHttpRequest();
+        client.open(
+          "post",
+          "https://ven02714.service-now.com/api/now/table/u_token_cache"
+        );
+
+        client.setRequestHeader("Accept", "application/json");
+        client.setRequestHeader("Content-Type", "application/json");
+
+        //Eg. UserName="admin", Password="admin" for this code sample.
+        client.setRequestHeader(
+          "Authorization",
+          "Basic " + btoa("dshilkret" + ":" + "DSPass.01")
+        );
+
+        client.onreadystatechange = function () {
+          if (this.readyState == this.DONE) {
+            document.getElementById("response").innerHTML =
+              this.status + this.response;
+          }
+        };
+        client.send(requestBody);
+      }
+
+      //END SN REST API Explorer
       function buildTable() {
         document.getElementById("log").innerHTML +=
           '<tr class="tableTRDebug" id="logTR"><td class="tableTDDebug"><b>Key</b></td><td class="tableTDDebug"><b>Value</b></td></tr>';
