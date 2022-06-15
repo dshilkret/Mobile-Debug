@@ -16,7 +16,77 @@
 
 <body>
    
-	
+	<!--Mobile Debug Logging-->
+<div>  
+    <table><tr>
+    <td class="tableButtons"><button  class="icon" onClick="mobileDebug()">Local</button></td>
+    <td class="tableButtons"><button  class="icon" onClick="mobileDebugSession()">Session</button></td>
+    <td class="tableButtons"><button  class="icon" onClick="mobileDebugCookie()">Cookies</button></td>
+    <td class="tableButtons"><button  class="icon" onClick="mobileDebugUA()">UserAgent</button></td>
+    <td class="tableButtons"><button  class="icon iconReset" onClick="mobileDebugClear()">Reset</button></td>
+    </tr>
+    </table>
+    <div id="logUA"></div>
+        <table class="tableDebug" id="log">
+        <!--tr class="tableTRDebug" id="logTR"><td class="tableTDDebug"><b>Key</b></td><td class="tableTDDebug"><b>Value</b></td></tr-->
+    </table>
+    </div>
+    
+    <script>
+    function mobileDebug (){
+        buildTable();
+        for(var i  in localStorage){
+            if (localStorage.hasOwnProperty(i)) {
+                       console.log(i,localStorage[i]);
+                       var key = i;
+                       var value = localStorage[i];
+                       var both = "<tr class='tableTDDebug'><td class='tableTDDebug'>" + key + "</td><td class='tableTDDebug'>" + value + "</td></tr>";
+                       document.getElementById("log").innerHTML += both;
+            }
+        }
+        
+    }
+    function mobileDebugSession (){
+        buildTable();
+        for(var i  in sessionStorage){
+            if (sessionStorage.hasOwnProperty(i)) {
+                       console.log(i,sessionStorage[i]);
+                       var key = i;
+                       var value = sessionStorage[i];
+                       var both = "<tr class='tableTRDebug'><td class='tableTDDebug'>" + key + "</td><td class='tableTDDebug'>" + value + "</td></tr>";
+                       document.getElementById("log").innerHTML += both;
+            }
+        }
+        
+    }
+    function mobileDebugClear (){
+        var Table = document.getElementById("log");
+        Table.innerHTML = "";
+        var UA = document.getElementById("logUA");
+        UA.innerHTML = "";
+        var UA = document.getElementById("logTR");
+        UA.innerHTML = "";
+        document.getElementById("log").innerHTML += "<table class='tableDebug' id='log'><tr class='tableTRDebug'><td class='tableTDDebug'><b>Key</b></td><td class='tableTDDebug'><b>Value</b></td></tr></table>"
+    }
+    function mobileDebugCookie  ()
+    {
+    buildTable();
+     var allcookies = document.cookie;
+     //alert("All Cookies : " + allcookies);
+    
+     // Get all the cookies pairs in an array
+     cookiearray = allcookies.split(';');
+     // Now take key value pair out of this array
+     for(var i=0; i<cookiearray.length; i++){
+     key = cookiearray[i].split('=')[0];
+     value = cookiearray[i].split('=')[1];
+      //var cookies = "<tr><td>" + name + "</td><td>" + value + "</td></tr>";
+      var both = "<tr class='tableTDDebug'><td class='tableTDDebug'>" + key + "</td><td class='tableTDDebug'>" + value + "</td></tr>";
+    
+     document.getElementById("log").innerHTML += both;
+     }
+    }
+    </script>
     <div class="container">
         <div class="leftContainer">
             <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
