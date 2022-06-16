@@ -6,7 +6,9 @@ tenantUrl = localStorage.getItem("msal-tenantUrl");
      msalConfig = {
         auth: {
             clientId: '9624a483-5297-45f7-91da-a8ec0e75798b', //This is your client ID
-            authority: "https://login.microsoftonline.com/common" //This is your tenant info
+            authority: "https://login.microsoftonline.com/common", //This is your tenant info
+            //redirectUri: "http://localhost:30662/"
+
         },
         cache: {
             cacheLocation: "localStorage",
