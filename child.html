@@ -23,7 +23,26 @@
     <p>This page is in iframe running on <span id='domain'></span>.</p>
     <p><button class='btn btn-warning' id='postButton'>Post "World!" to the parent window.</button></p>
     <div id='receivedMessageContent'></div>
-
+    <div>
+        <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
+        <button id="SignIn" onclick="signIn()">Sign In</button>
+      </div>
+      <div class="leftContainer">
+        <p id="WelcomeMessage">DT MSAL Demo Mobile POC</p>
+        <button id="SignIn" onclick="signInMobile()">Sign In Mobile</button>
+      </div>
+     
+        <pre id="json"></pre>
+        <pre id="spo-json"></pre>
+        <h3>DS Test JSZIP</h3>
+        <button id="cool">Do it!</button>
+        <script src="jquery.min.js"></script>
+        <script src="jszip.min.js"></script>
+        <script src="jszip-utils.min.js"></script>
+        <script src="FileSaver.min.js"></script>
+        <script src="index.js"></script>
+      
+    </div>
     <script>
         document.querySelector('#domain').innerHTML = document.domain;
         var receivedMessage = document.querySelector('#receivedMessageContent');
@@ -39,26 +58,7 @@
             parentEvent.source.postMessage('WORLD!', parentEvent.origin);
         });
     </script>
-          <div>
-        <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
-        <button id="SignIn" onclick="signIn()">Sign In</button>
-      </div>
-      <div class="leftContainer">
-        <p id="WelcomeMessage">DT MSAL Demo Mobile POC</p>
-        <button id="SignIn" onclick="signInMobile()">Sign In Mobile</button>
-      </div>
-      <div class="rightContainer">
-        <pre id="json"></pre>
-        <pre id="spo-json"></pre>
-        <h3>DS Test JSZIP</h3>
-        <button id="cool">Do it!</button>
-        <script src="jquery.min.js"></script>
-        <script src="jszip.min.js"></script>
-        <script src="jszip-utils.min.js"></script>
-        <script src="FileSaver.min.js"></script>
-        <script src="index.js"></script>
-      </div>
-    </div>
+ 
 </body>
 
 </html>
