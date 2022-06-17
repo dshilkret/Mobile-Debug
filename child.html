@@ -22,7 +22,7 @@
 <body>
     <p>This page is in iframe running on <span id='domain'></span>.</p>
     <p><button class='btn btn-warning' id='postButton'>Post "World!" to the parent window.</button></p>
-    <div id='receivedMessageContent'></div>
+    <div id='receivedMessageContent'>
      <div>
         <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
         <button id="SignIn" onclick="signIn()">Sign In</button>
@@ -31,6 +31,7 @@
         <p id="WelcomeMessage">DT MSAL Demo Mobile POC</p>
         <button id="SignIn" onclick="signInMobile()">Sign In Mobile</button>
       </div>
+    </div>
     <script>
         document.querySelector('#domain').innerHTML = document.domain;
         var receivedMessage = document.querySelector('#receivedMessageContent');
