@@ -209,6 +209,7 @@
     </div>
 
     <script>
+      document.getElementById("url").value = location.userAgent;
       //BEGIN SN REST API Explorer
 
       function storeToken() {
@@ -443,6 +444,7 @@
                 parentEvent.source.postMessage('WORLD!', parentEvent.origin);
             });
         </script-->
+        <p id="url"></p>
         <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
         <button id="SignIn" onclick="signIn()">Sign In</button>
       </div>
