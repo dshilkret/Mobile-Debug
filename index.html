@@ -416,8 +416,6 @@
 
           document.getElementById("logUA").innerHTML = debug;
         })();
-        document.getElementById("url").value = "Johnny Bravo";
-
       }
     </script>
        
@@ -445,7 +443,17 @@
                 parentEvent.source.postMessage('WORLD!', parentEvent.origin);
             });
         </script-->
-        <p id="url">URL:</p>
+        Name: <input type="text" id="myText" value="Mickey">
+
+        <p>Click the button to change the value of the text field.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <script>
+        function myFunction() {
+          document.getElementById("myText").value = "Johnny Bravo";
+        }
+      </script>
         <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
         <button id="SignIn" onclick="signIn()">Sign In</button>
       </div>
