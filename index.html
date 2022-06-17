@@ -8,19 +8,19 @@
     <title>Post Message Demo</title>
 
     <style>
-      #domain {
-          font-weight: bold;
-      }
-      
-      #receivedMessageContent {
-          padding: 1em;
-      }
-      
-      button,
-      iframe {
-          width: 100%;
-      }
-  </style>
+        #domain {
+            font-weight: bold;
+        }
+        
+        #receivedMessageContent {
+            padding: 1em;
+        }
+        
+        button,
+        iframe {
+            width: 100%;
+        }
+    </style>
     <style>
       /*Mobile Debug Table*/
       .tableButtons {
@@ -422,7 +422,7 @@
           const childUrl = 'child.html';
   
           // Show the domain which this page is running on.
-          //document.querySelector('#domain').innerHTML = "mobile-debug-ten.vercel.app"; //document.domain;
+          document.querySelector('#domain').innerHTML = document.domain;
   
           // Set the location of the iframe.
           var childIframe = document.getElementById('child').contentWindow;
