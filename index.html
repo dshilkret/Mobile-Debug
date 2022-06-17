@@ -418,49 +418,10 @@
         })();
       }
     </script>
-        <script>
-          const childUrl = 'child.html';
-  
-          // Show the domain which this page is running on.
-          document.querySelector('#domain').innerHTML = document.domain;
-  
-          // Set the location of the iframe.
-          var childIframe = document.getElementById('child').contentWindow;
-          childIframe.location = childUrl;
-  
-          // Show it when this page receive a message.
-          var receivedMessage = document.querySelector('#receivedMessageContent');
-          window.addEventListener('message', function(event) {
-              receivedMessage.innerHTML += '<p>' + event.data + '</p>';
-          }, false);
-  
-          // Send message to the iframe page when the button is clicked.
-          var postButton = document.querySelector('#postButton');
-          postButton.addEventListener('click', function() {
-              childIframe.postMessage('HELLO! ', childUrl);
-          });
-      </script>
-    <div class="container">
-      <div class='container'>
-        <h1>Cross-Domain PostMessage demo</h1>
-        <h3>This page is running on <span id='domain'></span>.</h3>
+       
+    <!--div class="container">
 
-        <div id='parentContents'>
-            <div class='panel panel-primary' id='receivedMessage'>
-                <div class='panel-heading'>
-                    <h3 class='panel-title'>Received messages from iframe</h3>
-                </div>
-                <div id='receivedMessageContent'>
-                </div>
-            </div>
-            <div id='receivedMessage'></div>
-        </div>
-        <div id='childContents'>
-            <button class='btn btn-success' id='postButton'>Post "Hello!" to iframe page</button>
-            <iframe id='child' class='panel panel-default' scrolling='yes'></iframe>
-        </div>
-    </div>
-      <!--div class="leftContainer">
+      <div class="leftContainer">
         <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
         <button id="SignIn" onclick="signIn()">Sign In</button>
       </div>
