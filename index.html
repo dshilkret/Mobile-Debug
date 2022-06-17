@@ -422,11 +422,11 @@
    
 
       <div >
-        <p>This page is in iframe running on <span id='domain'></span>.</p>
+        <!--p>This page is in iframe running on <span id='domain'></span>.</p>
         <p><button class='btn btn-warning' id='postButton'>Post "World!" to the parent window.</button></p>
         <div id='receivedMessageContent'></div>
     
-        <!--script>
+        <script>
           debugger;
             document.querySelector('#domain').innerHTML = document.domain;
             var receivedMessage = document.querySelector('#receivedMessageContent');
