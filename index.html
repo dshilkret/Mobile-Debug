@@ -421,6 +421,25 @@
           });
       </script>
     <div class="container">
+      <div class='container'>
+        <h1>Cross-Domain PostMessage demo</h1>
+        <h3>This page is running on <span id='domain'></span>.</h3>
+
+        <div id='parentContents'>
+            <div class='panel panel-primary' id='receivedMessage'>
+                <div class='panel-heading'>
+                    <h3 class='panel-title'>Received messages from iframe</h3>
+                </div>
+                <div id='receivedMessageContent'>
+                </div>
+            </div>
+            <div id='receivedMessage'></div>
+        </div>
+        <div id='childContents'>
+            <button class='btn btn-success' id='postButton'>Post "Hello!" to iframe page</button>
+            <iframe id='child' class='panel panel-default' scrolling='yes'></iframe>
+        </div>
+    </div>
       <div class="leftContainer">
         <p id="WelcomeMessage">DT MSAL Demo!!!!!!!</p>
         <button id="SignIn" onclick="signIn()">Sign In</button>
