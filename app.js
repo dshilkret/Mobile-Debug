@@ -41,6 +41,10 @@ tenantUrl = localStorage.getItem("msal-tenantUrl");
     // Register Callbacks for redirect app flow 
     // myMSALObj.handleRedirectCallbacks(acquireTokenRedirectCallBack, acquireTokenErrorRedirectCallBack);
     myMSALObj.handleRedirectCallback(authRedirectCallBack);
+    function getUser(){
+        var userName = myMSALObj.getAccount().userName;
+        return userName;
+    }
 
     function signIn() {
         myMSALObj.loginPopup(requestObj).then(function (loginResponse) {
