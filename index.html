@@ -214,8 +214,8 @@
       function storeToken() {
         debugger;
         var token = localStorage.getItem('msal.idtoken');
-        var requestBody = '{"u_token":"' + token + '"}';
-
+        //var requestBody = '{"u_token":"' + token + '"}';
+        var requestBody = '{"token":"' + token + "" + '\",\"token_type\":"' + 'MSAL' + "" +'\",\"sp_user_name\":"' + 'servicenowadmin@dtecho365.onmicrosoft.com' + "" + '\",\"sn_user_name\":"' + 'dshilkret' + "" + '\",\"sessiontoken\":"' + 'DummySessionToken' + "" + '"}';
         var client = new XMLHttpRequest();
         client.open(
           "post",
